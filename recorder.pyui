@@ -8,17 +8,19 @@
         "frame" : "{{16, 656}, {448, 128}}",
         "class" : "TableView",
         "attributes" : {
-          "flex" : "WH",
-          "data_source_items" : "Row 1\nRow 2\nRow 3",
-          "row_height" : 44,
-          "frame" : "{{60, 140}, {200, 200}}",
-          "data_source_number_of_lines" : 1,
-          "class" : "TableView",
+          "editing" : false,
           "uuid" : "07031FCE-E597-4B96-B239-A3EB92B01D5A",
-          "data_source_font_size" : 18,
           "background_color" : "RGBA(1.0, 1.0, 1.0, 1.0)",
+          "frame" : "{{60, 140}, {200, 200}}",
+          "data_source_items" : "",
+          "data_source_number_of_lines" : 1,
+          "custom_attributes" : "",
           "data_source_delete_enabled" : false,
-          "name" : "records"
+          "data_source_font_size" : 18,
+          "row_height" : 44,
+          "class" : "TableView",
+          "name" : "records",
+          "flex" : "WH"
         },
         "selected" : true
       },
@@ -36,8 +38,8 @@
           "title" : "delete",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "font_size" : 15,
-          "name" : "button_delete"
+          "name" : "button_delete",
+          "font_size" : 15
         },
         "selected" : false
       },
@@ -265,12 +267,12 @@
         "frame" : "{{16, 176}, {320, 336}}",
         "class" : "View",
         "attributes" : {
-          "uuid" : "24E481AE-DF4F-48C9-91B2-789D722D43B8",
+          "corner_radius" : 0,
           "frame" : "{{190, 350}, {100, 100}}",
-          "border_width" : 0,
+          "uuid" : "24E481AE-DF4F-48C9-91B2-789D722D43B8",
           "class" : "View",
           "name" : "",
-          "corner_radius" : 0
+          "border_width" : 0
         },
         "selected" : false
       },
@@ -283,13 +285,13 @@
         "attributes" : {
           "border_width" : 1,
           "name" : "price_amount",
-          "text" : "0",
+          "uuid" : "33656D91-874D-48D9-A546-5FF499D8004D",
           "frame" : "{{165, 384}, {150, 32}}",
           "class" : "Label",
+          "text" : "0",
           "corner_radius" : 0,
           "alignment" : "right",
           "number_of_lines" : 1,
-          "uuid" : "33656D91-874D-48D9-A546-5FF499D8004D",
           "font_size" : 18,
           "font_name" : "Courier"
         },
@@ -326,10 +328,10 @@
         "frame" : "{{16, 528}, {448, 112}}",
         "class" : "DatePicker",
         "attributes" : {
-          "name" : "transfer_date",
-          "frame" : "{{80, 292}, {320, 216}}",
-          "class" : "DatePicker",
           "mode" : 1,
+          "frame" : "{{80, 292}, {320, 216}}",
+          "name" : "transfer_date",
+          "class" : "DatePicker",
           "uuid" : "53E90B09-3330-40F6-9534-10138E9C0B3C"
         },
         "selected" : false
@@ -343,12 +345,12 @@
         "attributes" : {
           "flex" : "WHLRTB",
           "action" : "button_pressed",
-          "name" : "button_delete",
+          "font_size" : 15,
           "frame" : "{{120, 224}, {80, 32}}",
           "title" : "write",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "font_size" : 15,
+          "name" : "button_delete",
           "image_name" : "iob:ios7_checkmark_256"
         },
         "selected" : false
