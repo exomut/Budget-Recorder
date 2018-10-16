@@ -44,7 +44,7 @@ def button_pressed(button):
 		formatted_data = \
 			f'{transfer_date.date:{date_format}},' \
 			f'{agent_name.text},' \
-			f'{price_amount.text}' \
+			f'{price_amount.text},' \
 			f'{category_name}\n'
 					
 		with io.open(DATA_FILE, 'a+', encoding='utf8') as f:
