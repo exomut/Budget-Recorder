@@ -33,6 +33,9 @@ def button_pressed(button):
 		price_amount.text = '0'
 		
 	if title == 'write':
+		if agent_name.text == '':
+			alert('Please enter an agent name.')
+			return
 		formatted_data = '{date:{date_format}},{agent},{price}\n'.format(
 				date=transfer_date.date,
 				date_format='%Y-%m-%d',
@@ -51,11 +54,17 @@ def button_pressed(button):
 
 
 def reload_records():
-	with open(DATA_FILE, 'r') as f:
-		entries = ui.ListDataSource(f.read().splitlines())
-		entries.items.reverse()
-		records.data_source = entries
-		records.reload_data()
+	try:
+		with open(DATA_FILE, 'r+') as f:
+			entries = ui.ListDataSource(f.read().splitlines())
+			entries.items.reverse()
+			records.data_source = entries
+			records.reload_data()
+	except FileNotFoundError:
+		logger.info(
+			'"{file_name}" does not exist yet, so data did not load.'
+			.format(file_name=DATA_FILE)
+			)
 	
 
 if __name__ == '__main__':
