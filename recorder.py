@@ -6,6 +6,22 @@ from dialogs import *
 
 # Constants
 DATA_FILE = 'data.csv'
+CATEGORIES = ui.ListDataSource([
+	'水道光熱費',
+	'旅費交通費',
+	'通信費',
+	'広告宣伝費',
+	'接待交際費',
+	'消耗品費',
+	'地代家賃',
+	'個人事業税',
+	'固定資産税',
+	'国民健康保険',
+	'国民年金',
+	'特別区民税',
+	'生命保険',
+	'売上'
+	])
 
 
 def button_pressed(button):
@@ -17,6 +33,8 @@ def button_pressed(button):
 	if title in '0123456789':
 		if price_amount.text == '0':
 			price_amount.text = ''
+		elif price_amount.text == '-0':
+			price_amount.text = '-'
 		price_amount.text += title
 			
 	if title == '+/-':
@@ -29,9 +47,18 @@ def button_pressed(button):
 	if title == 'delete':
 		price_amount.text = price_amount.text[:-1]
 
+	if title == 'delete_all':
+		price_amount.text = ''
+
+	if title == 'clear':
+		price_amount.text = ''
+		agent_name.text = ''
+		category.reload()
+		transfer_date.date = transfer_date.date.now()
+
 	# Never leave the price amount blank
 	if price_amount.text == '':
-		price_amount.text = '0'
+		price_amount.text = '-0'
 		
 	if title == 'write':
 		if len(category.selected_rows) == 0:
@@ -79,11 +106,15 @@ if __name__ == '__main__':
 	view = ui.load_view()
 	view.present('sheet')
 	
-	# Load Essential Views
-	price_amount = view['price_amount']
-	agent_name = view['agent_name']
-	category = view['category']
+	# Load essential views
 	transfer_date = view['transfer_date']
+	agent_name = view['agent_name']
+	price_amount = view['price_amount']
+	category = view['category']
 	records = view['records_area']['records']
+	
+	# Populate the data
+	category.data_source = CATEGORIES
+	category.reload_data()
 	
 	reload_records()
