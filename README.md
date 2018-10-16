@@ -1,0 +1,1 @@
+Project to simplify the recording of receipts on phone and tablet. Allowing simpler transfer to budget spreadsheet.
