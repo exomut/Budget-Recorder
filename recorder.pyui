@@ -262,6 +262,7 @@
         "class" : "Label",
         "attributes" : {
           "uuid" : "33656D91-874D-48D9-A546-5FF499D8004D",
+          "flex" : "WHLRTB",
           "corner_radius" : 4,
           "frame" : "{{165, 384}, {150, 32}}",
           "border_color" : "RGBA(0.504717,0.504717,0.504717,1.000000)",
@@ -274,7 +275,7 @@
           "name" : "price_amount",
           "font_size" : 32
         },
-        "selected" : true
+        "selected" : false
       },
       {
         "nodes" : [
@@ -284,6 +285,7 @@
         "class" : "TextField",
         "attributes" : {
           "uuid" : "275E3BC0-21DF-4636-B689-FDC54D7B0E6E",
+          "flex" : "WHLRTB",
           "corner_radius" : 4,
           "frame" : "{{140, 384}, {200, 32}}",
           "number_of_lines" : 1,
@@ -348,8 +350,8 @@
             "class" : "TableView",
             "attributes" : {
               "uuid" : "07031FCE-E597-4B96-B239-A3EB92B01D5A",
-              "editing" : false,
               "data_source_action" : "",
+              "flex" : "WHLRTB",
               "background_color" : "RGBA(1.0, 1.0, 1.0, 1.0)",
               "frame" : "{{60, 140}, {200, 200}}",
               "data_source_items" : "",
@@ -361,9 +363,9 @@
               "row_height" : 32,
               "class" : "TableView",
               "name" : "records",
-              "flex" : "LRTB"
+              "editing" : false
             },
-            "selected" : false
+            "selected" : true
           }
         ],
         "frame" : "{{0, 656}, {480, 144}}",
@@ -376,7 +378,7 @@
           "name" : "records_area",
           "uuid" : "1805F1B2-0F08-4B01-890A-506A2BA84A3A"
         },
-        "selected" : false
+        "selected" : true
       },
       {
         "nodes" : [
@@ -446,11 +448,11 @@
     "frame" : "{{0, 0}, {480, 800}}",
     "class" : "View",
     "attributes" : {
-      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
-      "enabled" : true,
-      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "enabled" : true,
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
       "name" : "CSV Budget Recorder",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
       "flex" : ""
     },
     "selected" : false
