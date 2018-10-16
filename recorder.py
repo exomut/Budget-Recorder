@@ -1,3 +1,4 @@
+import io
 import ui
 import sound
 import logging
@@ -33,39 +34,36 @@ def button_pressed(button):
 		price_amount.text = '0'
 		
 	if title == 'write':
+		category_name = category.data_source.items[category.selected_row[1]]
+
 		if agent_name.text == '':
 			alert('Please enter an agent name.')
 			return
-		formatted_data = '{date:{date_format}},{agent},{price}\n'.format(
-				date=transfer_date.date,
-				date_format='%Y-%m-%d',
-				agent=agent_name.text,
-				price=price_amount.text
-				)
-				
-		with open(DATA_FILE, 'a+') as f:
+		
+		date_format = '%Y-%m-%d'
+		formatted_data = \
+			f'{transfer_date.date:{date_format}},' \
+			f'{agent_name.text},' \
+			f'{price_amount.text}' \
+			f'{category_name}\n'
+					
+		with io.open(DATA_FILE, 'a+', encoding='utf8') as f:
 			f.write(formatted_data)
-			logger.info('"{data}" appended to "{file_name}" file.'.format(
-				data=formatted_data.replace('\n', ''),
-				file_name=DATA_FILE
-				))
+			logger.info(f'"{formatted_data[:-1]}" appended to "{DATA_FILE}" file.')
 		reload_records()
-		hud_alert('Added entry for {agent}.'.format(agent=agent_name.text))
+		hud_alert(f'Added entry for {agent_name.text}.')
 
 
 def reload_records():
 	try:
-		with open(DATA_FILE, 'r+') as f:
+		with io.open(DATA_FILE, 'r+', encoding='utf8') as f:
 			entries = ui.ListDataSource(f.read().splitlines())
 			entries.items.reverse()
 			records.data_source = entries
 			records.reload_data()
 	except FileNotFoundError:
-		logger.info(
-			'"{file_name}" does not exist yet, so data did not load.'
-			.format(file_name=DATA_FILE)
-			)
-	
+		logger.info(f'"{DATA_FILE}" does not exist yet, so data did not load.')
+
 
 if __name__ == '__main__':
 	# Logger Setup
@@ -79,7 +77,8 @@ if __name__ == '__main__':
 	# Load Essential Views
 	price_amount = view['price_amount']
 	agent_name = view['agent_name']
+	category = view['category']
 	transfer_date = view['transfer_date']
-	records = view['records']
+	records = view['records_area']['records']
 	
 	reload_records()

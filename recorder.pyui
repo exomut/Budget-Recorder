@@ -5,29 +5,6 @@
         "nodes" : [
 
         ],
-        "frame" : "{{16, 656}, {448, 128}}",
-        "class" : "TableView",
-        "attributes" : {
-          "editing" : false,
-          "uuid" : "07031FCE-E597-4B96-B239-A3EB92B01D5A",
-          "background_color" : "RGBA(1.0, 1.0, 1.0, 1.0)",
-          "frame" : "{{60, 140}, {200, 200}}",
-          "data_source_items" : "",
-          "data_source_number_of_lines" : 1,
-          "custom_attributes" : "",
-          "data_source_delete_enabled" : false,
-          "data_source_font_size" : 18,
-          "row_height" : 44,
-          "class" : "TableView",
-          "name" : "records",
-          "flex" : "WH"
-        },
-        "selected" : true
-      },
-      {
-        "nodes" : [
-
-        ],
         "frame" : "{{352, 176}, {112, 70}}",
         "class" : "Button",
         "attributes" : {
@@ -280,19 +257,19 @@
         "nodes" : [
 
         ],
-        "frame" : "{{16, 112}, {448, 48}}",
+        "frame" : "{{336, 113}, {128, 48}}",
         "class" : "Label",
         "attributes" : {
           "border_width" : 1,
           "name" : "price_amount",
-          "uuid" : "33656D91-874D-48D9-A546-5FF499D8004D",
+          "number_of_lines" : 1,
           "frame" : "{{165, 384}, {150, 32}}",
+          "uuid" : "33656D91-874D-48D9-A546-5FF499D8004D",
           "class" : "Label",
           "text" : "0",
-          "corner_radius" : 0,
           "alignment" : "right",
-          "number_of_lines" : 1,
-          "font_size" : 18,
+          "corner_radius" : 0,
+          "font_size" : 45,
           "font_name" : "Courier"
         },
         "selected" : false
@@ -301,7 +278,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{16, 48}, {448, 48}}",
+        "frame" : "{{16, 112}, {304, 48}}",
         "class" : "TextField",
         "attributes" : {
           "uuid" : "275E3BC0-21DF-4636-B689-FDC54D7B0E6E",
@@ -317,7 +294,7 @@
           "spellchecking_type" : "yes",
           "class" : "TextField",
           "name" : "agent_name",
-          "font_size" : 18
+          "font_size" : 32
         },
         "selected" : false
       },
@@ -354,6 +331,66 @@
           "image_name" : "iob:ios7_checkmark_256"
         },
         "selected" : false
+      },
+      {
+        "nodes" : [
+          {
+            "nodes" : [
+
+            ],
+            "frame" : "{{16, 16}, {448, 128}}",
+            "class" : "TableView",
+            "attributes" : {
+              "uuid" : "07031FCE-E597-4B96-B239-A3EB92B01D5A",
+              "data_source_action" : "",
+              "flex" : "LRTB",
+              "background_color" : "RGBA(1.0, 1.0, 1.0, 1.0)",
+              "frame" : "{{60, 140}, {200, 200}}",
+              "data_source_items" : "",
+              "data_source_number_of_lines" : 1,
+              "custom_attributes" : "",
+              "data_source_edit_action" : "",
+              "data_source_delete_enabled" : false,
+              "data_source_font_size" : 18,
+              "row_height" : 44,
+              "class" : "TableView",
+              "name" : "records",
+              "editing" : false
+            },
+            "selected" : true
+          }
+        ],
+        "frame" : "{{0, 656}, {480, 144}}",
+        "class" : "View",
+        "attributes" : {
+          "frame" : "{{190, 350}, {100, 100}}",
+          "background_color" : "RGBA(0.771226,0.771226,0.771226,1.000000)",
+          "class" : "View",
+          "name" : "records_area",
+          "uuid" : "1805F1B2-0F08-4B01-890A-506A2BA84A3A"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{16, 46}, {448, 51}}",
+        "class" : "TableView",
+        "attributes" : {
+          "flex" : "WH",
+          "data_source_items" : "水道光熱費\n旅費交通費\n通信費\n広告宣伝費\n接待交際費\n消耗品費\n地代家賃\n個人事業税\n固定資産税\n国民健康保険\n国民年金\n特別区民税\n生命保険",
+          "row_height" : 44,
+          "frame" : "{{140, 300}, {200, 200}}",
+          "uuid" : "AFDDC8BE-0DB2-4F44-B17C-983FFCDDE0C7",
+          "data_source_number_of_lines" : 1,
+          "class" : "TableView",
+          "background_color" : "RGBA(1.0, 1.0, 1.0, 1.0)",
+          "data_source_delete_enabled" : false,
+          "data_source_font_size" : 18,
+          "name" : "category"
+        },
+        "selected" : true
       }
     ],
     "frame" : "{{0, 0}, {480, 800}}",
