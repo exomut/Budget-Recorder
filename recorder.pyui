@@ -258,7 +258,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{336, 129}, {128, 48}}",
+        "frame" : "{{336, 128}, {128, 48}}",
         "class" : "Label",
         "attributes" : {
           "uuid" : "33656D91-874D-48D9-A546-5FF499D8004D",
@@ -325,13 +325,14 @@
         "nodes" : [
 
         ],
-        "frame" : "{{384, 559}, {80, 80}}",
+        "frame" : "{{384, 560}, {80, 80}}",
         "class" : "Button",
         "attributes" : {
           "flex" : "WHLRTB",
           "action" : "button_pressed",
           "name" : "button_delete",
           "frame" : "{{120, 224}, {80, 32}}",
+          "tint_color" : "RGBA(0.000000,0.507075,0.000000,1.000000)",
           "title" : "write",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
@@ -344,7 +345,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{32, 559}, {320, 80}}",
+        "frame" : "{{0, 544}, {352, 112}}",
         "class" : "TableView",
         "attributes" : {
           "uuid" : "AFDDC8BE-0DB2-4F44-B17C-983FFCDDE0C7",
@@ -436,7 +437,7 @@
         "class" : "View",
         "attributes" : {
           "frame" : "{{190, 350}, {100, 100}}",
-          "background_color" : "RGBA(0.853774,0.853774,0.853774,1.000000)",
+          "background_color" : "RGBA(0.750000,0.750000,0.750000,1.000000)",
           "class" : "View",
           "name" : "border",
           "uuid" : "FDB4D966-4263-4E00-8DE9-467DBBC9550E"
@@ -460,16 +461,31 @@
           "name" : "button_copy",
           "font_size" : 15
         },
-        "selected" : true
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 528}, {480, 16}}",
+        "class" : "View",
+        "attributes" : {
+          "frame" : "{{190, 350}, {100, 100}}",
+          "background_color" : "RGBA(0.931604,0.931604,0.931604,1.000000)",
+          "class" : "View",
+          "name" : "border",
+          "uuid" : "FDB4D966-4263-4E00-8DE9-467DBBC9550E"
+        },
+        "selected" : false
       }
     ],
     "frame" : "{{0, 0}, {480, 800}}",
     "class" : "View",
     "attributes" : {
-      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
-      "enabled" : true,
-      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
       "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "enabled" : true,
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
       "name" : "CSV Budget Recorder",
       "flex" : ""
     },
