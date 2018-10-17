@@ -2,6 +2,7 @@ import io
 import ui
 import sound
 import clipboard
+import types
 import logging
 from dialogs import *
 
@@ -107,6 +108,8 @@ def reload_records():
 			entries.items.reverse()
 			records.data_source = entries
 			records.reload_data()
+			records.allows_selection = False
+						
 	except FileNotFoundError:
 		logger.info(f"\"{DATA_FILE}\" does not exist yet, so data did not load.")
 

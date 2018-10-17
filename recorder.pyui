@@ -273,7 +273,7 @@
           "font_name" : "Courier",
           "class" : "Label",
           "name" : "price_amount",
-          "font_size" : 24
+          "font_size" : 16
         },
         "selected" : false
       },
