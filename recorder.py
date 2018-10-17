@@ -1,11 +1,12 @@
 import io
 import ui
 import sound
+import clipboard
 import logging
 from dialogs import *
 
 # Constants
-DATA_FILE = 'data.csv'
+DATA_FILE = 'data.tsv'
 CATEGORIES = ui.ListDataSource([
 	'水道光熱費',
 	'旅費交通費',
@@ -25,6 +26,7 @@ CATEGORIES = ui.ListDataSource([
 
 
 def button_pressed(button):
+	'@type button: ui.button'
 	title = button.title
 	
 	# Give user feedback
@@ -73,22 +75,30 @@ def button_pressed(button):
 		
 		date_format = '%Y-%m-%d'
 		formatted_data = (
-			f"{transfer_date.date:{date_format}},"
-			f"{agent_name.text},"
-			f"{price_amount.text},"
+			f"{transfer_date.date:{date_format}}\t"
+			f"{agent_name.text.replace('	','')}\t"  # Remove tabs
+			f"{price_amount.text}\t"
 			f"{category_name}\n"
 			)
 					
-		with io.open(DATA_FILE, 'a+', encoding='utf8') as f:
+		with io.open(DATA_FILE, 'a+', encoding='utf-8') as f:
 			f.write(formatted_data)
 			logger.info(f"\"{formatted_data[:-1]}\" appended to \"{DATA_FILE}\" file.")
 		reload_records()
 		hud_alert(f"Added entry for {agent_name.text}.")
 
+def copy_records(sender):
+	'@type sender: ui.button'
+	try:
+		with io.open(DATA_FILE, 'r', encoding='utf-8') as f:
+			clipboard.set(f.read()[:-1])
+			hud_alert("Records copied to clipboard.")
+	except FileNotFoundError:
+		logger.info(f"\"{DATA_FILE}\" does not exist yet, so data did not load.")
 
 def reload_records():
 	try:
-		with io.open(DATA_FILE, 'r+', encoding='utf8') as f:
+		with io.open(DATA_FILE, 'r', encoding='utf-8') as f:
 			entries = ui.ListDataSource(f.read().splitlines())
 			entries.items.reverse()
 			records.data_source = entries
@@ -111,7 +121,7 @@ if __name__ == '__main__':
 	agent_name = view['agent_name']
 	price_amount = view['price_amount']
 	category = view['category']
-	records = view['records_area']['records']
+	records = view['records']
 	
 	# Populate the data
 	category.data_source = CATEGORIES

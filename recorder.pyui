@@ -15,8 +15,8 @@
           "title" : "delete",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "name" : "button_delete",
-          "font_size" : 15
+          "font_size" : 15,
+          "name" : "button_delete"
         },
         "selected" : false
       },
@@ -325,60 +325,20 @@
         "nodes" : [
 
         ],
-        "frame" : "{{368, 559}, {80, 80}}",
+        "frame" : "{{384, 559}, {80, 80}}",
         "class" : "Button",
         "attributes" : {
           "flex" : "WHLRTB",
           "action" : "button_pressed",
-          "font_size" : 15,
+          "name" : "button_delete",
           "frame" : "{{120, 224}, {80, 32}}",
           "title" : "write",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "name" : "button_delete",
+          "font_size" : 15,
           "image_name" : "iob:ios7_checkmark_256"
         },
         "selected" : false
-      },
-      {
-        "nodes" : [
-          {
-            "nodes" : [
-
-            ],
-            "frame" : "{{16, 16}, {448, 112}}",
-            "class" : "TableView",
-            "attributes" : {
-              "uuid" : "07031FCE-E597-4B96-B239-A3EB92B01D5A",
-              "data_source_action" : "",
-              "flex" : "WHLRTB",
-              "background_color" : "RGBA(1.0, 1.0, 1.0, 1.0)",
-              "frame" : "{{60, 140}, {200, 200}}",
-              "data_source_items" : "",
-              "data_source_number_of_lines" : 1,
-              "custom_attributes" : "",
-              "data_source_edit_action" : "",
-              "data_source_delete_enabled" : false,
-              "data_source_font_size" : 18,
-              "row_height" : 32,
-              "class" : "TableView",
-              "name" : "records",
-              "editing" : false
-            },
-            "selected" : true
-          }
-        ],
-        "frame" : "{{0, 656}, {480, 144}}",
-        "class" : "View",
-        "attributes" : {
-          "flex" : "WHLRTB",
-          "frame" : "{{190, 350}, {100, 100}}",
-          "background_color" : "RGBA(0.771226,0.771226,0.771226,1.000000)",
-          "class" : "View",
-          "name" : "records_area",
-          "uuid" : "1805F1B2-0F08-4B01-890A-506A2BA84A3A"
-        },
-        "selected" : true
       },
       {
         "nodes" : [
@@ -420,8 +380,8 @@
           "title" : "clear",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "font_size" : 15,
-          "name" : "button_clear"
+          "name" : "button_clear",
+          "font_size" : 15
         },
         "selected" : false
       },
@@ -434,15 +394,73 @@
         "attributes" : {
           "flex" : "WHLRTB",
           "action" : "button_pressed",
-          "font_size" : 15,
+          "name" : "button_delete_all",
           "frame" : "{{120, 224}, {80, 32}}",
           "title" : "delete_all",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "name" : "button_delete_all",
+          "font_size" : 15,
           "image_name" : "iob:ios7_skipbackward_256"
         },
         "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{47, 672}, {433, 128}}",
+        "class" : "TableView",
+        "attributes" : {
+          "uuid" : "07031FCE-E597-4B96-B239-A3EB92B01D5A",
+          "flex" : "WHLRTB",
+          "editing" : false,
+          "frame" : "{{60, 140}, {200, 200}}",
+          "data_source_items" : "",
+          "data_source_number_of_lines" : 1,
+          "custom_attributes" : "",
+          "data_source_edit_action" : "",
+          "data_source_delete_enabled" : false,
+          "data_source_font_size" : 18,
+          "row_height" : 32,
+          "class" : "TableView",
+          "name" : "records",
+          "data_source_action" : ""
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 656}, {480, 16}}",
+        "class" : "View",
+        "attributes" : {
+          "frame" : "{{190, 350}, {100, 100}}",
+          "background_color" : "RGBA(0.853774,0.853774,0.853774,1.000000)",
+          "class" : "View",
+          "name" : "border",
+          "uuid" : "FDB4D966-4263-4E00-8DE9-467DBBC9550E"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 707}, {48, 48}}",
+        "class" : "Button",
+        "attributes" : {
+          "flex" : "WHLRTB",
+          "action" : "copy_records",
+          "image_name" : "iob:ios7_copy_256",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "write",
+          "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
+          "class" : "Button",
+          "name" : "button_copy",
+          "font_size" : 15
+        },
+        "selected" : true
       }
     ],
     "frame" : "{{0, 0}, {480, 800}}",
@@ -451,8 +469,8 @@
       "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "enabled" : true,
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
-      "name" : "CSV Budget Recorder",
       "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "name" : "CSV Budget Recorder",
       "flex" : ""
     },
     "selected" : false
