@@ -273,7 +273,7 @@
           "font_name" : "Courier",
           "class" : "Label",
           "name" : "price_amount",
-          "font_size" : 32
+          "font_size" : 24
         },
         "selected" : false
       },
@@ -299,7 +299,7 @@
           "spellchecking_type" : "yes",
           "class" : "TextField",
           "name" : "agent_name",
-          "font_size" : 32
+          "font_size" : 24
         },
         "selected" : false
       },
@@ -478,7 +478,7 @@
           "name" : "border",
           "uuid" : "FDB4D966-4263-4E00-8DE9-467DBBC9550E"
         },
-        "selected" : true
+        "selected" : false
       }
     ],
     "frame" : "{{0, 0}, {480, 800}}",
