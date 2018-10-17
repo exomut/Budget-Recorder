@@ -15,8 +15,8 @@
           "title" : "delete",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "name" : "button_delete",
-          "font_size" : 15
+          "font_size" : 15,
+          "name" : "button_delete"
         },
         "selected" : false
       },
@@ -330,13 +330,13 @@
         "attributes" : {
           "flex" : "WHLRTB",
           "action" : "write_record",
-          "font_size" : 15,
+          "name" : "button_delete",
           "frame" : "{{120, 224}, {80, 32}}",
           "tint_color" : "RGBA(0.000000,0.507075,0.000000,1.000000)",
           "title" : "write",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "name" : "button_delete",
+          "font_size" : 15,
           "image_name" : "iob:ios7_checkmark_256"
         },
         "selected" : false
@@ -381,8 +381,8 @@
           "title" : "clear",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "font_size" : 15,
-          "name" : "button_clear"
+          "name" : "button_clear",
+          "font_size" : 15
         },
         "selected" : false
       },
@@ -395,12 +395,12 @@
         "attributes" : {
           "flex" : "WHLRTB",
           "action" : "button_pressed",
-          "font_size" : 15,
+          "name" : "button_delete_all",
           "frame" : "{{120, 224}, {80, 32}}",
           "title" : "delete_all",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "name" : "button_delete_all",
+          "font_size" : 15,
           "image_name" : "iob:ios7_skipbackward_256"
         },
         "selected" : false
@@ -413,8 +413,8 @@
         "class" : "TableView",
         "attributes" : {
           "uuid" : "07031FCE-E597-4B96-B239-A3EB92B01D5A",
+          "editing" : false,
           "data_source_action" : "",
-          "flex" : "WHLRTB",
           "frame" : "{{60, 140}, {200, 200}}",
           "data_source_items" : "",
           "data_source_number_of_lines" : 1,
@@ -425,7 +425,7 @@
           "row_height" : 32,
           "class" : "TableView",
           "name" : "records",
-          "editing" : false
+          "flex" : "WHLRTB"
         },
         "selected" : false
       },
@@ -436,6 +436,7 @@
         "frame" : "{{0, 656}, {480, 16}}",
         "class" : "View",
         "attributes" : {
+          "flex" : "WHLRTB",
           "frame" : "{{190, 350}, {100, 100}}",
           "background_color" : "RGBA(0.750000,0.750000,0.750000,1.000000)",
           "class" : "View",
@@ -458,8 +459,8 @@
           "title" : "write",
           "uuid" : "2BD242A5-7DC0-4E94-BA58-E56EC414C54F",
           "class" : "Button",
-          "font_size" : 15,
-          "name" : "button_copy"
+          "name" : "button_copy",
+          "font_size" : 15
         },
         "selected" : false
       },
@@ -470,23 +471,24 @@
         "frame" : "{{0, 528}, {480, 16}}",
         "class" : "View",
         "attributes" : {
+          "flex" : "WHLRTB",
           "frame" : "{{190, 350}, {100, 100}}",
           "background_color" : "RGBA(0.931604,0.931604,0.931604,1.000000)",
           "class" : "View",
           "name" : "border",
           "uuid" : "FDB4D966-4263-4E00-8DE9-467DBBC9550E"
         },
-        "selected" : false
+        "selected" : true
       }
     ],
     "frame" : "{{0, 0}, {480, 800}}",
     "class" : "View",
     "attributes" : {
-      "name" : "CSV Budget Recorder",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
       "enabled" : true,
       "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "name" : "CSV Budget Recorder",
       "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
-      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
       "flex" : ""
     },
     "selected" : false
