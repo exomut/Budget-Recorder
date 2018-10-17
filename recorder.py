@@ -61,31 +61,34 @@ def button_pressed(button):
 	# Never leave the price amount blank
 	if price_amount.text == '':
 		price_amount.text = '-0'
-		
-	if title == 'write':
-		if len(category.selected_rows) == 0:
-			alert("Please select a category")
-			return
-		
-		category_name = category.data_source.items[category.selected_row[1]]
 
-		if agent_name.text == '':
-			alert("Please enter an agent name.")
-			return
-		
-		date_format = '%Y-%m-%d'
-		formatted_data = (
-			f"{transfer_date.date:{date_format}}\t"
-			f"{agent_name.text.replace('	','')}\t"  # Remove tabs
-			f"{price_amount.text}\t"
-			f"{category_name}\n"
-			)
-					
-		with io.open(DATA_FILE, 'a+', encoding='utf-8') as f:
-			f.write(formatted_data)
-			logger.info(f"\"{formatted_data[:-1]}\" appended to \"{DATA_FILE}\" file.")
-		reload_records()
-		hud_alert(f"Added entry for {agent_name.text}.")
+
+def write_record(sender):
+	'@type sender: ui.button'
+	if len(category.selected_rows) == 0:
+		alert("Please select a category")
+		return
+	
+	category_name = category.data_source.items[category.selected_row[1]]
+
+	if agent_name.text == '':
+		alert("Please enter an agent name.")
+		return
+	
+	date_format = '%Y-%m-%d'
+	formatted_data = (
+		f"{transfer_date.date:{date_format}}\t"
+		f"{agent_name.text.replace('	','')}\t"  # Remove tabs
+		f"{price_amount.text}\t"
+		f"{category_name}\n"
+		)
+				
+	with io.open(DATA_FILE, 'a+', encoding='utf-8') as f:
+		f.write(formatted_data)
+		logger.info(f"\"{formatted_data[:-1]}\" appended to \"{DATA_FILE}\" file.")
+	reload_records()
+	hud_alert(f"Added entry for {agent_name.text}.")
+
 
 def copy_records(sender):
 	'@type sender: ui.button'
@@ -95,6 +98,7 @@ def copy_records(sender):
 			hud_alert("Records copied to clipboard.")
 	except FileNotFoundError:
 		logger.info(f"\"{DATA_FILE}\" does not exist yet, so data did not load.")
+
 
 def reload_records():
 	try:
