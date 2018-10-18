@@ -1,27 +1,23 @@
 import ui
+import io
 import sound
 import logging
 from dialogs import alert
 from records import reload_records, write_record, copy_records
 
+# Logger Setup
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 # Constants
-CATEGORIES = ui.ListDataSource([
-	'水道光熱費',
-	'旅費交通費',
-	'通信費',
-	'広告宣伝費',
-	'接待交際費',
-	'消耗品費',
-	'地代家賃',
-	'個人事業税',
-	'固定資産税',
-	'国民健康保険',
-	'国民年金',
-	'特別区民税',
-	'生命保険',
-	'売上'
-	])
+# Load categories from text file. Seperated by new lines
+CATEGORIES_FILE_NAME = 'categories.txt'
+try: 
+	with io.open(CATEGORIES_FILE_NAME, 'r', encoding='utf-8') as f:
+		CATEGORIES = ui.ListDataSource(f.read().splitlines())
+except FileNotFoundError:
+	logger.error(f'The "{CATEGORIES_FILE_NAME}" file not found. Please create it.')
+	exit()
 
 
 def button_pressed(sender):
@@ -91,10 +87,6 @@ def button_pressed_copy(sender):
 
 
 if __name__ == '__main__':
-	# Logger Setup
-	logger = logging.getLogger(__name__)
-	logger.setLevel(logging.INFO)
-	
 	# Get main view
 	view = ui.load_view()
 	view.present('sheet')
@@ -105,6 +97,9 @@ if __name__ == '__main__':
 	price_amount = view['price_amount']
 	category = view['category']
 	records = view['records']
+	
+	# View setup
+	records.allows_selection = False
 	
 	# Populate the data
 	category.data_source = CATEGORIES

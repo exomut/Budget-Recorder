@@ -2,20 +2,19 @@ import ui
 import io
 import clipboard
 import logging
-from dialogs import hud_alert, alert
+from dialogs import hud_alert
 
 # Constants
 DATA_FILE = 'data.tsv'
 SEPERATOR = '\t'
 NEW_LINE = '\n'
-CATEGORY_DISPLAY_LENGTH = 6
-AGENT_DISPLAY_LENGTH = 16
+CATEGORY_DISPLAY_LENGTH = 3
+AGENT_DISPLAY_LENGTH = 10
 RECORDS_FONT_SIZE = 12
 RECORDS_FONT = 'Courier'
 
 # Logger Setup
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
 
 
 def copy_records():
@@ -24,20 +23,18 @@ def copy_records():
 			clipboard.set(f.read()[:-1])
 			hud_alert("Records copied to clipboard.")
 	except FileNotFoundError:
-		logger.info(f"\"{DATA_FILE}\" does not exist yet, so data did not load.")
+		logger.error(f"\"{DATA_FILE}\" does not exist yet, so data did not load.")
 
 
 def reload_records(records):
 	try:
 		with io.open(DATA_FILE, 'r', encoding='utf-8') as f:
 			entries = DataSource(f.read().splitlines())
-			entries.items.reverse()
+			entries.items.reverse()  # Show newest entries first
 			records.data_source = entries
 			records.reload_data()
-			records.allows_selection = False
-						
 	except FileNotFoundError:
-		logger.info(f"\"{DATA_FILE}\" does not exist yet, so data did not load.")
+		logger.error(f"\"{DATA_FILE}\" does not exist yet, so data did not load.")
 
 		
 def write_record(
