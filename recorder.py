@@ -1,13 +1,11 @@
-import io
 import ui
 import sound
-import clipboard
-import types
 import logging
-from dialogs import *
+from dialogs import alert
+from records import reload_records, write_record, copy_records
+
 
 # Constants
-DATA_FILE = 'data.tsv'
 CATEGORIES = ui.ListDataSource([
 	'水道光熱費',
 	'旅費交通費',
@@ -26,9 +24,9 @@ CATEGORIES = ui.ListDataSource([
 	])
 
 
-def button_pressed(button):
-	'@type button: ui.button'
-	title = button.title
+def button_pressed(sender):
+	'@type sender: ui.button'
+	title = sender.title
 	
 	# Give user feedback
 	sound.play_effect('ui:click4')
@@ -64,54 +62,32 @@ def button_pressed(button):
 		price_amount.text = '-0'
 
 
-def write_record(sender):
-	'@type sender: ui.button'
+def button_pressed_confirm(sender):
+	'@type sender:ui.button'
 	if len(category.selected_rows) == 0:
 		alert("Please select a category")
 		return
 	
+	# selecte_row: The section and row of the first selected row (as a 2-tuple).
 	category_name = category.data_source.items[category.selected_row[1]]
 
 	if agent_name.text == '':
 		alert("Please enter an agent name.")
 		return
-	
-	date_format = '%Y-%m-%d'
-	formatted_data = (
-		f"{transfer_date.date:{date_format}}\t"
-		f"{agent_name.text.replace('	','')}\t"  # Remove tabs
-		f"{price_amount.text}\t"
-		f"{category_name}\n"
+		
+	write_record(
+		sender,
+		transfer_date.date,
+		agent_name.text,
+		price_amount.text,
+		category_name
 		)
-				
-	with io.open(DATA_FILE, 'a+', encoding='utf-8') as f:
-		f.write(formatted_data)
-		logger.info(f"\"{formatted_data[:-1]}\" appended to \"{DATA_FILE}\" file.")
-	reload_records()
-	hud_alert(f"Added entry for {agent_name.text}.")
+	reload_records(records)
 
-
-def copy_records(sender):
-	'@type sender: ui.button'
-	try:
-		with io.open(DATA_FILE, 'r', encoding='utf-8') as f:
-			clipboard.set(f.read()[:-1])
-			hud_alert("Records copied to clipboard.")
-	except FileNotFoundError:
-		logger.info(f"\"{DATA_FILE}\" does not exist yet, so data did not load.")
-
-
-def reload_records():
-	try:
-		with io.open(DATA_FILE, 'r', encoding='utf-8') as f:
-			entries = ui.ListDataSource(f.read().splitlines())
-			entries.items.reverse()
-			records.data_source = entries
-			records.reload_data()
-			records.allows_selection = False
-						
-	except FileNotFoundError:
-		logger.info(f"\"{DATA_FILE}\" does not exist yet, so data did not load.")
+	
+def button_pressed_copy(sender):
+	'@type sender:ui.button'
+	copy_records()
 
 
 if __name__ == '__main__':
@@ -134,4 +110,4 @@ if __name__ == '__main__':
 	category.data_source = CATEGORIES
 	category.reload_data()
 	
-	reload_records()
+	reload_records(records)
