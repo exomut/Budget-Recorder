@@ -8,8 +8,10 @@ from dialogs import hud_alert, alert
 DATA_FILE = 'data.tsv'
 SEPERATOR = '\t'
 NEW_LINE = '\n'
-CATEGORY_DISPLAY_LENGTH = 2
-AGENT_DISPLAY_LENGTH = 10
+CATEGORY_DISPLAY_LENGTH = 6
+AGENT_DISPLAY_LENGTH = 16
+RECORDS_FONT_SIZE = 12
+RECORDS_FONT = 'Courier'
 
 # Logger Setup
 logger = logging.getLogger(__name__)
@@ -68,9 +70,11 @@ class DataSource(ui.ListDataSource):
 		# Veiw styles (default, subtitle, value1, value2)
 		cell = ui.TableViewCell('value1')
 		cell.text_label.number_of_lines = self.number_of_lines
+		cell.text_label.font = (RECORDS_FONT, RECORDS_FONT_SIZE)
+		cell.detail_text_label.font = (RECORDS_FONT, RECORDS_FONT_SIZE)
 		
 		# Demystify the data
-		columns = ("date", "agent", "amount", "category")
+		columns = ('date', 'agent', 'amount', 'category')
 		data_dict = dict(zip(columns, str(item).split(SEPERATOR)))
 		
 		# Add data to cell labels

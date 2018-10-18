@@ -5,7 +5,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{368, 192}, {80, 80}}",
+        "frame" : "{{368, 80}, {80, 80}}",
         "class" : "Button",
         "attributes" : {
           "flex" : "WHLRTB",
@@ -241,7 +241,7 @@
             "selected" : true
           }
         ],
-        "frame" : "{{32, 192}, {320, 336}}",
+        "frame" : "{{32, 80}, {320, 336}}",
         "class" : "View",
         "attributes" : {
           "border_width" : 0,
@@ -258,7 +258,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{336, 128}, {128, 48}}",
+        "frame" : "{{336, 16}, {128, 48}}",
         "class" : "Label",
         "attributes" : {
           "uuid" : "33656D91-874D-48D9-A546-5FF499D8004D",
@@ -281,7 +281,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{16, 128}, {304, 48}}",
+        "frame" : "{{16, 16}, {304, 48}}",
         "class" : "TextField",
         "attributes" : {
           "uuid" : "275E3BC0-21DF-4636-B689-FDC54D7B0E6E",
@@ -307,7 +307,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{16, 16}, {448, 96}}",
+        "frame" : "{{16, 432}, {448, 96}}",
         "class" : "DatePicker",
         "attributes" : {
           "border_width" : 0,
@@ -371,7 +371,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{368, 384}, {80, 80}}",
+        "frame" : "{{368, 272}, {80, 80}}",
         "class" : "Button",
         "attributes" : {
           "flex" : "WHLRTB",
@@ -390,7 +390,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{368, 288}, {80, 80}}",
+        "frame" : "{{368, 176}, {80, 80}}",
         "class" : "Button",
         "attributes" : {
           "flex" : "WHLRTB",
@@ -413,19 +413,19 @@
         "class" : "TableView",
         "attributes" : {
           "uuid" : "07031FCE-E597-4B96-B239-A3EB92B01D5A",
-          "data_source_action" : "",
           "flex" : "WHLRTB",
+          "editing" : false,
           "frame" : "{{60, 140}, {200, 200}}",
           "data_source_items" : "",
           "data_source_number_of_lines" : 1,
           "custom_attributes" : "",
           "data_source_edit_action" : "",
           "data_source_delete_enabled" : false,
-          "data_source_font_size" : 18,
-          "row_height" : 32,
+          "data_source_font_size" : 9,
+          "row_height" : 24,
           "class" : "TableView",
           "name" : "records",
-          "editing" : false
+          "data_source_action" : ""
         },
         "selected" : false
       },
@@ -462,7 +462,7 @@
           "name" : "button_copy",
           "font_size" : 15
         },
-        "selected" : true
+        "selected" : false
       },
       {
         "nodes" : [
@@ -479,16 +479,32 @@
           "uuid" : "FDB4D966-4263-4E00-8DE9-467DBBC9550E"
         },
         "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 416}, {480, 16}}",
+        "class" : "View",
+        "attributes" : {
+          "uuid" : "FDB4D966-4263-4E00-8DE9-467DBBC9550E",
+          "frame" : "{{190, 350}, {100, 100}}",
+          "background_color" : "RGBA(0.931604,0.931604,0.931604,1.000000)",
+          "class" : "View",
+          "name" : "border",
+          "flex" : "WHLRTB"
+        },
+        "selected" : false
       }
     ],
     "frame" : "{{0, 0}, {480, 800}}",
     "class" : "View",
     "attributes" : {
-      "name" : "CSV Budget Recorder",
-      "enabled" : true,
-      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
       "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "enabled" : true,
       "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "name" : "CSV Budget Recorder",
       "flex" : ""
     },
     "selected" : false
