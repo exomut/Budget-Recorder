@@ -9,3 +9,7 @@ All receipt input software I have used would always clear the data from the fiel
 ## Copy to clipboard
 
 Copy to clipboard using tab seperated format for easy pasting to a spreadsheet.
+
+## Customizable Categories
+
+Just open up the 'categories.txt' file and replace or add the categories you require. One per line.
